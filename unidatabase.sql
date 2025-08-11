@@ -1374,6 +1374,81 @@ INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (550, 'Elective:
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (551, 'Elective: Industrial Training Practice', 8, 103);
 
 
+--Power Supply and Electrical Equipment
+-- semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (552, 'Mathematics - Part 1', 1, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (553, 'Programming and Computer Usage', 1, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (554, 'Technical Mechanics', 1, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (555, 'Electrical Engineering Documentation', 1, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (556, 'Foreign Language - Part 1', 1, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (557, 'Practical Training - Part 1', 1, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (558, 'Elective: Specialized Sports Training - Part 1 / Sports and Social Adaptation - Part 1', 1, 41);
 
+
+-- semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (559, 'Mathematics - Part 2', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (560, 'Physics', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (561, 'Theoretical Electrical Engineering - Part 1', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (562, 'Electronics', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (563, 'Hydraulics and Pneumatics', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (564, 'Electrical Engineering Materials', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (565, 'Foreign Language - Part 2', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (566, 'Practical Training - Part 2', 2, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (567, 'Elective: Specialized Sports Training - Part 2 / Sports and Social Adaptation - Part 2', 2, 41);
+
+
+-- semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (568, 'Theoretical Electrical Engineering - Part 2', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (569, 'Electrical Measurements', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (570, 'Electrical Machines and Apparatus - Part 1', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (571, 'Thermal Power Engineering', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (572, 'Machine Elements and Mechanisms', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (573, 'CAD Systems in Power Supply and Electrical Equipment', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (574, 'Foreign Language - Part 3', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (575, 'Practical Training - Part 3', 3, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (576, 'Elective: Specialized Sports Training - Part 3 / Sports Management - Part 1', 3, 41);
+
+
+-- semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (577, 'Electrical Machines and Apparatus - Part 2', 4, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (578, 'Digital and Microprocessor Technology', 4, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (579, 'Lighting and Installation Technology', 4, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (580, 'Electric Drives', 4, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (581, 'Industrial Converters in Electrical Equipment - Part 1', 4, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (582, 'Practical Training - Part 4', 4, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (583, 'Elective: Specialized Sports Training - Part 4 / Sports Management - Part 2', 4, 41);
+
+-- semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (584, 'Power Supply - Part 1', 5, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (585, 'Industrial Converters in Electrical Equipment - Part 2', 5, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (586, 'Electrical Part of Power Plants and Substations', 5, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (587, 'Electrical Part of Power Plants and Substations - Project', 5, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (588, 'High Voltage Technology', 5, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (589, 'Technical Safety', 5, 41);
+
+
+-- semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (590, 'Power Supply - Part 2', 6, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (591, 'Electrical Equipment - Part 1', 6, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (592, 'Lighting Installations', 6, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (593, 'Automated Electric Drives', 6, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (594, 'Relay Protection', 6, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (595, 'Elective: Operation and Diagnostics of Electrical Installations or Law or Labor Risk Mgmt', 6, 41);
+
+
+-- semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (597, 'Electrical Equipment - Part 2', 7, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (598, 'Electronic and Microprocessor Systems for Industrial Equipment Control', 7, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (599, 'Electric Transport', 7, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (600, 'Elective: Transient Processes in Electrical Equipment / Labor Law / Production Management', 7, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (601, 'Elective: Lighting Control or Industrial Law or Industrial Eng.', 7, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (602, 'Electrical Equipment - Project', 7, 41);
+
+-- semester 8
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (603, 'Computer Methods for Design and Research in Power Supply and Electrical Equipment', 8, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (604, 'Elective: Electrical Equip. Prod. or Entrepreneurship or HR Management', 8, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (605, 'Elective: Energy Efficiency / Energy Economy Organization / Quality Management', 8, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (606, 'Power Supply - Project', 8, 41);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (607, 'Pre-Diploma Internship in the Specialty', 8, 41);
 
 
