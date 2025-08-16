@@ -265,6 +265,11 @@ INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (91, 'Soci
 INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (100, 'Biomedical Electronics', 'BME', 4);
 INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (101, 'Renewable Energy Sources', 'RES', 4);
 INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (56, 'Power Supply and Electrical Equipment', 'ESEO', 4);
+INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (104, 'Electrical Engineering and Renewable Energy Sources', 'EERES', 4);
+INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (105, 'Civil Protection in Disasters and Accidents', 'CPDA', 4);
+
+
+
 
 
 
@@ -277,6 +282,7 @@ INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (64, 'Comp
 INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (65, 'Software and Internet Technologies', 'SIT', 6);
 INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (66, 'Automation, Information and Control Computer Systems', 'AICCS', 6);
 INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (67, 'Automation, Robotics and Control Computer Systems', 'ARUKS', 6);
+INSERT INTO specialnosti (specid, name, shortname, fakultetid) VALUES (106, 'Artificial Intelligence', 'AI', 6);
 
 
 -- ??? (fakultetid = 7)
@@ -1450,5 +1456,445 @@ INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (604, 'Elective:
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (605, 'Elective: Energy Efficiency / Energy Economy Organization / Quality Management', 8, 41);
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (606, 'Power Supply - Project', 8, 41);
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (607, 'Pre-Diploma Internship in the Specialty', 8, 41);
+
+
+--Electrical Engineering and Renewable Energy Sources
+-- semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (608, 'Mathematics - Part 1', 1, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (609, 'Programming and Computer Usage', 1, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (610, 'Technical Mechanics', 1, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (611, 'Electrical Engineering Documentation', 1, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (612, 'Foreign Language - Part 1', 1, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (613, 'Practical Training - Part 1', 1, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (614, 'Elective: Specialized Sports Training - Part 1 / Sports and Social Adaptation - Part 1', 1, 104);
+
+-- semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (615, 'Mathematics - Part 2', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (616, 'Physics', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (617, 'Theoretical Electrical Engineering - Part 1', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (618, 'Electronics', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (619, 'Hydraulics and Pneumatics', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (620, 'Electrical Engineering Materials', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (621, 'Foreign Language - Part 2', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (622, 'Practical Training - Part 2', 2, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (623, 'Elective: Specialized Sports Training - Part 2 / Sports and Social Adaptation - Part 2', 2, 104);
+
+-- semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (624, 'Theoretical Electrical Engineering - Part 2', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (625, 'Electrical Measurements', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (626, 'Electrical Machines and Apparatus - Part 1', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (627, 'Thermal Power Engineering', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (628, 'Machine Elements and Mechanisms', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (629, 'CAD Systems in Power Supply and Electrical Equipment', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (630, 'Foreign Language - Part 3', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (631, 'Practical Training - Part 3', 3, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (632, 'Elective: Specialized Sports Training - Part 3 / Sports Management - Part 1', 3, 104);
+
+-- semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (633, 'Electrical Machines and Apparatus - Part 2', 4, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (634, 'Digital and Microprocessor Technology', 4, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (635, 'Lighting and Installation Technology', 4, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (636, 'Electric Drives', 4, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (637, 'Industrial Converters in Electrical Equipment - Part 1', 4, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (638, 'Practical Training - Part 4', 4, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (639, 'Elective: Specialized Sports Training - Part 4 / Sports Management - Part 2', 4, 104);
+
+-- semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (640, 'Power Supply - Part 1', 5, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (641, 'Industrial Converters in Electrical Equipment - Part 2', 5, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (642, 'Electrical Part of Power Plants and Substations', 5, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (643, 'Electrical Part of Power Plants and Substations - Project', 5, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (644, 'High Voltage Technology', 5, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (645, 'Technical Safety', 5, 104);
+
+-- semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (646, 'Power Supply - Part 2', 6, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (647, 'Electrical Equipment - Part 1', 6, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (648, 'Lighting Installations', 6, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (649, 'Automated Electric Drives', 6, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (650, 'Relay Protection', 6, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (651, 'Elective: Operation and Diagnostics of Electrical Installations or Law or Labor Risk Mgmt', 6, 104);
+
+-- semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (652, 'Electrical Equipment - Part 2', 7, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (653, 'Electronic and Microprocessor Systems for Industrial Equipment Control', 7, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (654, 'Electric Transport', 7, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (655, 'Elective: Transient Processes in Electrical Equipment / Labor Law / Production Management', 7, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (656, 'Elective: Lighting Control or Industrial Law or Industrial Eng.', 7, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (657, 'Electrical Equipment - Project', 7, 104);
+
+-- semester 8
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (658, 'Computer Methods for Design and Research in Power Supply and Electrical Equipment', 8, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (659, 'Elective: Electrical Equip. Prod. or Entrepreneurship or HR Management', 8, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (660, 'Elective: Energy Efficiency / Energy Economy Organization / Quality Management', 8, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (661, 'Power Supply - Project', 8, 104);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (662, 'Pre-Diploma Internship in the Specialty', 8, 104);
+
+
+--Electrical Engineering and Electrotechnologies
+-- Semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (663, 'Mathematics - Part 1', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (664, 'Programming and Computer Usage', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (665, 'Electrical Engineering Documentation', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (666, 'Materials Science Practical', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (667, 'Foreign Language - Part 1', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (668, 'Elective Course', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (669, 'Specialized Sports Training - Part 1', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (670, 'Sports and Social Adaptation - Part 1', 1, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (671, 'Practical Training - Part 1', 1, 43);
+
+-- Semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (672, 'Mathematics - Part 2', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (673, 'Physics', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (674, 'Electronics', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (675, 'Theoretical Electrical Engineering - Part 1', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (676, 'Foreign Language - Part 2', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (677, 'Introduction to Electrotechnologies and Nanotechnologies', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (678, 'Practical Training - Part 2', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (679, 'Elective Course', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (680, 'Specialized Sports Training - Part 2', 2, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (681, 'Sports and Social Adaptation - Part 2', 2, 43);
+
+-- Semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (682, 'Electrical Engineering Materials', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (683, 'Electrical Measurements', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (684, 'Technical Mechanics', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (685, 'Theoretical Electrical Engineering - Part 2', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (686, 'Introduction to MATLAB', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (687, 'Practical Training - Part 3', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (688, 'Elective Course', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (689, 'Specialized Sports Training - Part 3', 3, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (690, 'Sports Management - Part 1', 3, 43);
+
+-- Semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (691, 'Fundamentals of Automatic Control', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (692, 'Basic Course in Renewable Energy Sources', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (693, 'Hydraulics and Pneumatics', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (694, 'Machine Elements', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (695, 'Electrotechnologies - Part 1', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (696, 'Industrial Chemistry', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (697, 'Elective Course', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (698, 'Specialized Sports Training - Part 4', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (699, 'Sports Management - Part 2', 4, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (700, 'Practical Training - Part 4', 4, 43);
+
+-- Semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (701, 'Electrotechnologies - Part 2', 5, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (702, 'Electrothermy', 5, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (703, 'Household Electrical Appliances', 5, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (704, 'Electrical Machines - Part 1', 5, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (705, 'Electrical Apparatus - Part 1', 5, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (706, 'Power Conversion Technology', 5, 43);
+
+-- Semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (707, 'Electrical Machines - Part 2', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (708, 'Electrical Apparatus - Part 2', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (709, 'Technical Safety', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (710, 'Computer Modeling of Electrotechnical Devices and Technologies', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (711, 'Elective Course', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (712, 'Lighting Installations', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (713, 'Programmable Controllers', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (714, 'Communication and Internet Technologies', 6, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (715, 'Specialized Internship', 6, 43);
+
+-- Semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (716, 'Electric Vehicles', 7, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (717, 'Elective Course - Project', 7, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (718, 'Design of Electromechanical Systems', 7, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (719, 'Design of Electrotechnological Devices', 7, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (720, 'Electrical Micromachines', 7, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (721, 'Electrical Apparatus - Part 3', 7, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (722, 'Electromechanical Systems', 7, 43);
+
+-- Semester 8
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (723, 'Operation, Diagnostics, and Repair of Electrotechnical Equipment', 8, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (724, 'Electrical Systems in Automobiles', 8, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (725, 'Elective Course', 8, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (726, 'Electrotechnological Devices for Environmental Purposes', 8, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (727, 'Production Management', 8, 43);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (728, 'Testing and Reliability in Electrical Engineering', 8, 43);
+
+
+
+--Civil Protection in Disasters and Accidents
+-- Semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (729, 'Mathematics', 1, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (730, 'Chemistry', 1, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (731, 'Computer Science', 1, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (732, 'English - Part 1', 1, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (733, 'Elective: Sports Training 1 / Social Adaptation 1', 1, 105);
+
+-- Semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (734, 'Technical Mechanics', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (735, 'Materials Science', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (736, 'Engineering Graphics', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (737, 'Gen and Extreme Psychology', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (738, 'Sociology', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (739, 'Natural Disasters', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (740, 'English - Part 2', 2, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (741, 'Elective: Sports Training 2 / Social Adaptation 2', 2, 105);
+
+-- Semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (742, 'Physics', 3, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (743, 'Electrical Engineering', 3, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (744, 'Statistics', 3, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (745, 'Harmful Environmental Factors', 3, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (746, 'Cutting and Welding Tech', 3, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (747, 'English - Part 3', 3, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (748, 'Elective: Sports Training 3 / Sports Management 1', 3, 105);
+
+-- Semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (749, 'Thermodynamics and Heat', 4, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (750, 'Hazardous Chemicals', 4, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (751, 'Fire Safety Regulations', 4, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (752, 'Elective: Meteorology / Geography', 4, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (753, 'English - Part 4', 4, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (754, 'Elective: Sports Training 4 / Sports Management 2', 4, 105);
+
+-- Semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (755, 'Workplace Safety and Quality', 5, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (756, 'Critical Situations and Hazards', 5, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (757, 'Disaster Damage Assessment', 5, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (758, 'Industrial Accidents', 5, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (759, 'Specialized Sports Training 5', 5, 105);
+
+-- Semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (760, 'Emergency Signaling Systems', 6, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (761, 'Emergency and Rescue Organization', 6, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (762, 'Radiation, Chemical and Biological Safety', 6, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (763, 'Rescue Training', 6, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (764, 'Urban Risk Prevention - Project', 6, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (765, 'Specialized Sports Training 6', 6, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (766, 'Special Internship', 6, 105);
+
+-- Semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (767, 'Radiation, Chemical and Biological Protection', 7, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (768, 'Risk Analysis and Assessment', 7, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (769, 'Elective: Industrial and Urban Risk / Safety Management', 7, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (770, 'Emergency and Firefighting Equipment', 7, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (771, 'Protective Devices - Project', 7, 105);
+
+-- Semester 8
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (772, 'Transport and Environmental Impact', 8, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (773, 'Emergency Response Tactics', 8, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (774, 'Elective: Infrastructure / Buildings in Emergencies', 8, 105);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (775, 'Marine Environmental Protection', 8, 105);
+
+
+
+--Artificial Intelligence
+-- Semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (776, 'Mathematics - Part 1', 1, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (777, 'Introduction to Computer Science', 1, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (778, 'Basic Programming - Part 1', 1, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (779, 'Physics for IT', 1, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (780, 'English for IT Engineers - Part 1', 1, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (781, 'Elective Course - Specialized Sports Training - Part 1 / Adapted Physical Activity', 1, 106);
+
+-- Semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (782, 'Mathematics - Part 2', 2, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (783, 'Digital Systems', 2, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (784, 'Basic Programming - Part 2', 2, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (785, 'Physics for IT', 2, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (786, 'English for IT Engineers - Part 2', 2, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (787, 'Elective Course - Specialized Sports Training - Part 2 / Adapted Physical Activity', 2, 106);
+
+-- Semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (788, 'Discrete Structures', 3, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (789, 'Object-Oriented Programming', 3, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (790, 'Probability Theory for Computer Science', 3, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (791, 'Computer Organization', 3, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (792, 'Practical Training – Part 2', 3, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (793, 'Elective Course - Specialized Sports Training – Part 3 / Adapted Physical Activity', 3, 106);
+
+-- Semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (794, 'Foundations of Artificial Intelligence', 4, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (795, 'Databases', 4, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (796, 'Microprocessor Technology', 4, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (797, 'Digital Signal Processing', 4, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (798, 'Systems Analysis', 4, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (799, 'Elective Course – Project – Discrete Structures / OOP / Computer Org', 4, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (800, 'Elective Course - Specialized Sports Training – Part 4 / Adapted Physical Activity', 4, 106);
+
+-- Semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (801, 'Introduction to Machine Learning', 5, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (802, 'Computer Graphics and VR', 5, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (803, 'Sensors, Actuators, and Controllers', 5, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (804, 'Computer Architectures', 5, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (805, 'Operating Systems', 5, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (806, 'Elective Course – Project: AI / OS / Architectures', 5, 106);
+
+-- Semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (807, 'Web Programming Technologies', 6, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (808, 'Functional Programming Languages', 6, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (809, 'Selected Methods in Machine Learning', 6, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (810, 'Computer Networks', 6, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (811, 'Specialization Internship', 6, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (812, 'Elective Course – Project: ML / OS / Architectures', 6, 106);
+
+-- Semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (813, 'Ethics and Legal Regulation in AI', 7, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (814, 'Robot and Robotic Systems Programming', 7, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (815, 'Parallel Algorithms and Systems', 7, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (816, 'Elective Course: Information Systems / Human-Centered Design', 7, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (817, 'Software Engineering', 7, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (818, 'Elective Course – Project: Web Tech / Functional Prog / Networks', 7, 106);
+
+-- Semester 8 – Electives (students choose 3)
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (819, 'Bayesian Reasoning', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (820, 'Image Processing and Computer Vision', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (821, 'Logical Programming and Production Systems', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (822, 'Intellectual Property Protection', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (823, 'Commercial Law', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (824, 'Natural Language Processing', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (825, 'Single-Chip Microcontrollers', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (826, 'Programmable Logic Design', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (827, 'Object-Oriented Applications', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (828, 'Blockchain Technologies and Applications', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (829, 'Mobile Application Programming', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (830, 'E-Commerce', 8, 106);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (831, 'Robotics Management and Planning Methods', 8, 106);
+
+
+
+--Industrial Design 
+-- Semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (832, 'Drawing - Part 1', 1, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (833, 'Applied Geometry and Engineering Graphics', 1, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (834, 'Mathematics', 1, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (835, 'Physics', 1, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (836, 'English - Part 1', 1, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (837, 'Elective Course – Specialized Sports Training – Part 1 / Sport and Social Adaptation – Part 1', 1, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (838, 'Practical Training – Part 1', 1, 13);
+
+-- Semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (839, 'Drawing - Part 2', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (840, 'Modeling', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (841, 'Technical Documentation', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (842, 'Materials Science and Technology of Materials', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (843, 'Informatics', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (844, 'Mechanical Engineering Basics', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (845, 'English - Part 2', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (846, 'Elective Course  – Specialized Sports Training – Part 2 / Sport and Social Adaptation – Part 2', 2, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (847, 'Practical Training – Part 2', 2, 13);
+
+-- Semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (848, 'Drawing - Part 3', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (849, 'Color Science', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (850, 'Ergonomic Design', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (851, 'Fundamentals of Computer Design', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (852, 'Corporate Management', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (853, 'English - Part 3', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (854, 'Elective Course  – Specialized Sports Training – Part 3 / Sports Management – Part 1', 3, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (855, 'Practical Training – Part 3', 3, 13);
+
+-- Semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (856, 'Computer 3D Design', 4, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (857, 'Typography and Font', 4, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (858, 'Theory of Composition', 4, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (859, 'Forming', 4, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (860, 'History of Art and Design', 4, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (861, 'Elective Course  – Specialized Sports Training – Part 4 / Sports Management – Part 2', 4, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (862, 'Practical Training – Part 4', 4, 13);
+
+-- Semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (863, 'Silicate Forms Design', 5, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (864, 'Industrial Design – Part 1', 5, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (865, 'Industrial Design – Project', 5, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (866, 'Computer Animation', 5, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (867, 'Electrical Engineering and Electronics', 5, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (868, 'Graphic Design', 5, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (869, 'Elective Course  – Metal Processing / Industrial Graphics / Jewelry Design', 5, 13);
+
+-- Semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (870, 'Industrial Design – Part 2', 6, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (871, 'Artistic Design', 6, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (872, 'Artistic Design – Project', 6, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (873, 'Elective Course  – Multimedia Design / 3D Digitization / Computer Modeling', 6, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (874, 'Modern Technologies in Design', 6, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (875, 'Specialization Internship', 6, 13);
+
+-- Semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (876, 'Interior Design', 7, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (877, 'Interior Design – Project', 7, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (878, 'Elective Course  – Fundamentals of Marketing / Intellectual Property Law / Commercial Law', 7, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (879, 'Printing Technologies', 7, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (880, 'Urban Design', 7, 13);
+
+-- Semester 8
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (881, 'Techniques and Technologies in Applied Arts', 8, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (882, 'Techniques and Technologies in Applied Arts – Project', 8, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (883, 'Marketing Communications', 8, 13);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (884, 'Elective Course 8 – Childrens Environment Design / Interactive Design', 8, 13);
+
+
+
+--Industrial Management
+-- Semester 1
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (885, 'Micro and Macroeconomics', 1, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (886, 'Mathematics', 1, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (887, 'Management', 1, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (888, 'Physics', 1, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (889, 'English - Part 1', 1, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (890, 'Elective Course – Specialized Sports Training – Part 1 / Sport and Social Adaptation – Part 1', 1, 31);
+
+-- Semester 2
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (891, 'Materials Science and Technology of Materials', 2, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (892, 'Engineering Graphics and Technical Documentation', 2, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (893, 'Business Economics', 2, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (894, 'Electrical Engineering and Electronics', 2, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (895, 'Fundamentals of Entrepreneurship', 2, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (896, 'English - Part 2', 2, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (897, 'Elective Course – Specialized Sports Training – Part 2 / Sport and Social Adaptation – Part 2', 2, 31);
+
+-- Semester 3
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (898, 'Informatics and Computer Technology', 3, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (899, 'Accounting of the Enterprise', 3, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (900, 'Marketing', 3, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (901, 'Business Communications and Public Relations', 3, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (902, 'Commercial Law', 3, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (903, 'Basics of Automation', 3, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (904, 'Elective Course – Specialized Sports Training – Part 3 / Sports Management – Part 1', 3, 31);
+
+-- Semester 4
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (905, 'Strategic Management', 4, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (906, 'Fundamentals of Finance', 4, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (907, 'Human Resource Management', 4, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (908, 'Intellectual Property Protection', 4, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (909, 'Production Technologies – Part 1 (Mechanical Engineering Technologies)', 4, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (910, 'Elective Course – Specialized Sports Training – Part 4 / Sports Management – Part 2', 4, 31);
+
+-- Semester 5
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (911, 'Production Technologies – Part 2 (Electrical Engineering and Electronics Technologies)', 5, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (912, 'Leadership and Team Management', 5, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (913, 'Industrial Engineering', 5, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (914, 'Corporate Finance Management', 5, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (915, 'Quality Management', 5, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (916, 'Elective Course – Presentation Skills / Time Management', 5, 31);
+
+-- Semester 6
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (917, 'Production Management', 6, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (918, 'Innovation Management', 6, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (919, 'Creativity and Methods for Generating New Ideas', 6, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (920, 'Management Decision Making', 6, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (921, 'Industrial Engineering Project', 6, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (922, 'Special Practice', 6, 31);
+
+-- Semester 7
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (923, 'Analysis and Diagnostics of Economic Activity', 7, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (924, 'Competitiveness of Industrial Enterprise', 7, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (925, 'Risk Management', 7, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (926, 'Business Planning and Control', 7, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (927, 'Fundamentals of Logistics', 7, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (928, 'Elective Course – Internet Tech / Renewable Energy / Maritime Transport', 7, 31);
+
+
+-- Semester 8
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (929, 'Business Evaluation', 8, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (930, 'Elective Course – Comp. Architectures / Wind Energy / Port Tech', 8, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (931, 'Elective Course – Telecom Networks / Solar Energy / Fleet and Ports', 8, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (932, 'Management Project', 8, 31);
+INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (933, 'Pre-diploma Practice', 8, 31);
+
 
 
