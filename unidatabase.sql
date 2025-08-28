@@ -127,9 +127,11 @@ CREATE TABLE users (
     userid      INTEGER NOT NULL,
     username    VARCHAR2(50) NOT NULL,
     password    VARCHAR2(100) NOT NULL,
-    role        VARCHAR2(20) NOT NULL,
-    relatedid   NUMBER NOT NULL
+    role        VARCHAR2(20) NOT NULL
+    
 ) TABLESPACE USERS;
+
+
 
 ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY (userid)
 USING INDEX TABLESPACE USERS;
@@ -653,6 +655,16 @@ INSERT INTO katedri (katedraid, name, fakultetid) VALUES (15, 'Electrical Engine
 INSERT INTO katedri (katedraid, name, fakultetid) VALUES (16, 'Theoretical and Measurement Electrical Engineering', 4);
 INSERT INTO katedri (katedraid, name, fakultetid) VALUES (17, 'Social and Legal Sciences', 10);
 INSERT INTO katedri (katedraid, name, fakultetid) VALUES (18, 'Department of Language and Continuing Education and Sport', 10);
+UPDATE katedri
+SET katedraid = 19
+WHERE name = 'Navigation, Transport Management and Waterway Cleanliness';
+
+
+INSERT INTO katedri (katedraid, name, fakultetid) VALUES (11, 'Technology of Machine Building and Metal Cutting Machines', 1);
+INSERT INTO katedri (katedraid, name, fakultetid) VALUES (31, 'Industrial Management', 1);
+INSERT INTO katedri (katedraid, name, fakultetid) VALUES (82, 'Plant Growing', 1);
+
+
 
 --Automation, Information and Control Computer Systems
 -- Semester 1
@@ -2034,5 +2046,87 @@ INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (1027, 'Elective
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (1028, 'Elective Course (Automated Traffic / Displays / Converters / Electromechanical Systems)', 8, 108);
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (1029, 'Elective Course (AI and Big Data / Fuel Cells / Batteries / Charging Stations)', 8, 108);
 INSERT INTO predmeti (subjectid, name, semestur, specid) VALUES (1030, 'Elective Course (Cybersecurity / Standards / Hybrid Vehicles / Transport Reliability)', 8, 108);
+
+
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (1, 'Asst.', 'Alexander', 'Markov', '10586', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (2, 'Dr.', 'Velizar', 'Ivanov', '10536', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (3, 'Asst.', 'Georgi', 'Vulchev', '10544', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (4, 'Assoc. Prof. Dr.', 'Dimka', 'Vasileva', '10510', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (5, 'Dr.', 'Konstantin', 'Mihaylov', '10535', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (6, 'Assoc. Prof. Dr.', 'Krasen', 'Krystev', '10006', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (7, 'Assoc. Prof. Dr.', 'Maria', 'Bakalova', '10008', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (8, 'Assoc. Prof. Dr.', 'Svilen', 'Stoyanov', '10243', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (9, 'Assoc. Prof. Dr.', 'Sonya', 'Alexandrova', '10039', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (10, 'Prof. Dr.', 'Stoyan', 'Slavov', '10012', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (11, 'Assoc. Prof. Dr.', 'Tanya', 'Avramova', '10013', 11);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (12, 'Asst.', 'Teodora', 'Peneva', '10568', 11);
+
+
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (13, 'Assoc. Prof. Dr.', 'Georgi', 'Antonov', '10014', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (14, 'Assoc. Prof. Dr.', 'Daniela', 'Spasova', '10015', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (15, 'Assoc. Prof.', 'Desislava', 'Mincheva', '10016', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (16, 'Assoc. Prof. Dr.', 'Nikolay', 'Atanasov', '10019', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (17, 'Asst.', 'Nikolay', 'Valchev', '10594', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (18, 'Asst.', 'Plamen', 'Stoyanov', '10559', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (19, 'Assoc. Prof. Dr.', 'Plamen', 'Petrov', '10021', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (20, 'Assoc. Prof.', 'Radosina', 'Yankova', '10592', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (21, 'Assoc. Prof. Dr.', 'Sergey', 'Kirov', '10024', 6);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (22, 'Assoc. Prof. Dr.', 'Tatyana', 'Mechkarova', '10316', 6);
+
+
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (23, 'Assoc. Prof. Dr.', 'Velichka', 'Georgieva', '10588', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (24, 'Assoc. Prof. Dr.', 'Veselin', 'Mihaylov', '10044', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (25, 'Assoc. Prof. Dr.', 'Daniel', 'Ivanov', '10527', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (26, 'Assoc. Prof.', 'Delyan', 'Petkov', '10598', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (27, 'Prof. Dr.', 'Zdravko', 'Ivanov', '10045', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (28, 'Assoc. Prof. Dr.', 'Krasimir', 'Bogdanov', '10311', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (29, 'Asst.', 'Nikolay', 'Ivanov', '10570', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (30, 'Assoc. Prof. Dr.', 'Radostin', 'Dimitrov', '10314', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (31, 'Assoc. Prof. Dr.', 'Rosen', 'Hristov', '10047', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (32, 'Assoc. Prof. Dr.', 'Sergey', 'Belchev', '10048', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (33, 'Assoc. Prof. Dr.', 'Stefan', 'Stefanov', '10050', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (34, 'Asst.', 'Stoyan', 'Stoyanov', '10537', 8);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (35, 'Assoc. Prof. Dr.', 'Trifon', 'Uzontonev', '10051', 8);
+
+
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (36, 'Assoc. Prof. Dr.', 'Aleksandrina', 'Bankova', '10027', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (37, 'Asst. Prof. Dr.', 'Asparuh', 'Atanasov', '10513', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (38, 'Assoc. Prof. Dr.', 'Diyan', 'Dimitrov', '10055', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (39, 'Assoc. Prof. Dr.', 'Zoya', 'Tsoneva', '10031', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (40, 'Asst. Prof. Dr.', 'Ismail', 'Mehmedov', '10530', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (41, 'Lecturer', 'Krasimira', 'Koleva', '10057', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (42, 'Assoc. Prof. Dr.', 'Nikolay', 'Kurtov', '10059', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (43, 'Asst. Prof. Dr.', 'Nina', 'Nedeva', '10552', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (44, 'Asst.', 'Plamen', 'Nikolov', '10577', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (45, 'Asst. Prof. Dr.', 'Stefan', 'Tenev', '10049', 7);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (46, 'Lecturer', 'Yanka', 'Krusteva', '10060', 7);
+
+
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (47, 'Assoc. Prof. Dr.', 'Beaneta', 'Yaneva', '10172', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (48, 'Asst. Prof. Dr.', 'Vesela', 'Dicheva', '10472', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (49, 'Asst. Prof. Dr.', 'Julieta', 'Mihaylova', '10584', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (50, 'Assoc. Prof. Dr.', 'Krasimira', 'Dimitrova', '10250', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (51, 'Asst. Prof. Dr.', 'Krasimira', 'Zagorova', '10238', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (52, 'Asst. Prof. Dr.', 'Marina', 'Marinova-Stoyanova', '10252', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (53, 'Asst. Prof. Dr.', 'Mihail', 'Ivanov', '10540', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (54, 'Prof. Dr.', 'Svetlana', 'Lesidrenska', '10254', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (55, 'Prof. Dr.', 'Svetlana', 'Dimitrakieva', '10475', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (56, 'Asst. Prof. Dr.', 'Svilen', 'Simeonov', '10471', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (57, 'Assoc. Prof. Dr.', 'Sibel', 'Ahmedova', '10255', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (58, 'Prof. Dr.', 'Siika', 'Demirova', '10256', 31);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (59, 'Prof. Dr.', 'Tanya', 'Panayotova', '10258', 31);
+
+
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (60, 'Assoc. Prof. Dr.', 'Albena', 'Ivanova', '10520', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (61, 'Prof. Dr.', 'Dragomir', 'Dimitrov', '10298', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (62, 'Prof. Dr.', 'Ivan', 'Kiryakov', '10300', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (63, 'Assoc. Prof. Dr.', 'Magdalena', 'Koleva', '10560', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (64, 'Assoc. Prof. Dr.', 'Miglena', 'Drumeva', '10301', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (65, 'Prof. Dr.', 'Miroslav', 'Ivanov', '10494', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (66, 'Assoc. Prof. Dr.', 'Nadya', 'Daskalova', '10302', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (67, 'Assoc. Prof. Dr.', 'Pavlina', 'Atanasova', '10304', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (68, 'Assoc. Prof. Dr.', 'Petar', 'Yankov', '10305', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (69, 'Assoc. Prof. Dr.', 'Plamena', 'Pankova', '10306', 82);
+INSERT INTO lecturers (lecturerid, titla, firstname, lastname, lecturernom, katedraid) VALUES (70, 'Asst.', 'Rositsa', 'Demirova', '10529', 82);
 
 
