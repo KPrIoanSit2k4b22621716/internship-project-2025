@@ -2705,6 +2705,101 @@ ALTER TABLE programi
 MODIFY hour VARCHAR2(20);
 
 
+
+
+
+CREATE SEQUENCE users_seq
+START WITH 1
+INCREMENT BY 1
+NOCACHE;
+
+CREATE SEQUENCE students_seq
+    START WITH 201
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+ALTER TABLE predmeti ADD has_lecture NUMBER(1) DEFAULT 1;
+ALTER TABLE predmeti ADD has_exercise NUMBER(1) DEFAULT 1;
+
+
+-- 1st Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Mathematics - Part 1';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Programming and Computer Use';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Electrical Documentation';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Economics';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name = 'Foreign Language - Part 1';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name = 'Practical Training - Part 1';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Specialized Sports%';
+
+-- 2nd Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Mathematics - Part 2';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Physics';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Electronics';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Theoretical Electrical Engineering';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name = 'Foreign Language - Part 2';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name = 'Practical Training - Part 2';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Specialized Sports%';
+
+-- 3rd Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Electrical Engineering Materials';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Electrical Measurements';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Technical Mechanics';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Electromechanical Devices';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Introduction to MATLAB';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Sensors in Automation and Robotics';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Specialized Sports%';
+
+-- 4th Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Control Theory - Part 1';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Data and Signal Processing in Automation';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Digital Circuitry';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Logic Control Systems';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Technical Safety';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Specialized Sports%';
+
+-- 5th Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Control Theory - Part 2';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Digital Control Systems';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Technical Means for Automation';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Embedded Systems';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Elective - Project%';
+
+-- 6th Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Programmable Controllers';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'System Identification';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Electronic Actuators in Automation';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Automated Electric Drives';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Elective Project%';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 0 WHERE name LIKE 'Specialized Internship%';
+
+-- 7th Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Control of Technological Processes';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Control of Electromechanical Systems';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'System Modeling and Optimization';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Elective - Industrial Information Systems%';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Industrial Communication Systems';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Design of Automation Systems';
+
+-- 8th Semester
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Design of Automation Systems';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Elective - CAD Systems%';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Elective - Building Automation%';
+UPDATE predmeti SET has_lecture = 1, has_exercise = 1 WHERE name = 'Intelligent Control Systems';
+UPDATE predmeti SET has_lecture = 0, has_exercise = 1 WHERE name LIKE 'Comprehensive Project%';
+
+COMMIT;
+
+
+-- Delete all existing schedule entries for this specialty (specid = 66)
+DELETE FROM programi
+WHERE groupid IN (
+    SELECT groupid FROM grupi WHERE specid = 66
+);
+
+COMMIT;
+
+
 DECLARE
     -- Cursor for all groups in specialty 66
     CURSOR c_groups IS
@@ -2714,8 +2809,10 @@ DECLARE
         ORDER BY kurs, education_type_id;
 
     -- Days and hours arrays
-    v_days   SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('Monday','Tuesday','Wednesday','Thursday','Friday');
-    v_hours  SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('08:00-09:30','10:00-11:30','12:00-13:30','14:00-15:30','16:00-17:30');
+    v_days SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST('Monday','Tuesday','Wednesday','Thursday','Friday');
+    v_hours SYS.ODCIVARCHAR2LIST := SYS.ODCIVARCHAR2LIST(
+        '07:30-09:00','09:15-10:45','11:00-12:30','12:45-14:15','14:30-16:00','16:15-17:45','18:00-19:30'
+    );
 
     -- associative array to track lectures already inserted per (course + type + subject)
     TYPE t_course_seen IS TABLE OF NUMBER INDEX BY VARCHAR2(100);
@@ -2729,25 +2826,26 @@ DECLARE
     v_day VARCHAR2(20);
     v_hour VARCHAR2(20);
     v_lecturerid NUMBER;
+
 BEGIN
     FOR g IN c_groups LOOP
         v_groupid := g.groupid;
         v_course  := g.kurs;
         v_edu_type := g.education_type_id;
 
-        -- Loop through all subjects in semesters 1–8
-        FOR s IN (SELECT subjectid, semestur FROM predmeti WHERE semestur <= 8 AND specid = 66) LOOP
+        -- Loop through all subjects in specialty 66
+        FOR s IN (SELECT subjectid, name, semestur FROM predmeti WHERE specid = 66 ORDER BY semestur, subjectid) LOOP
             v_subjectid := s.subjectid;
 
             -- Key for lecture: course + education_type + subject
             v_key := v_course || '-' || v_edu_type || '-' || v_subjectid;
 
-            -- Random day/time
+            -- RANDOM day/time
             v_day := v_days(TRUNC(DBMS_RANDOM.value(1, v_days.COUNT+1)));
             v_hour := v_hours(TRUNC(DBMS_RANDOM.value(1, v_hours.COUNT+1)));
             v_lecturerid := TRUNC(DBMS_RANDOM.value(1, 11)); -- assuming lecturer IDs 1..10
 
-            -- Insert lecture if not inserted yet for this course + type + subject
+            -- INSERT LECTURE (only once per course+subject)
             IF NOT course_seen.EXISTS(v_key) THEN
                 INSERT INTO programi(programid, groupid, subjectid, day, hour, lecturerid, type)
                 VALUES (programi_seq.NEXTVAL, v_groupid, v_subjectid, v_day, v_hour, v_lecturerid, 'Lecture');
@@ -2755,7 +2853,7 @@ BEGIN
                 course_seen(v_key) := 1;
             END IF;
 
-            -- Insert exercise for each group individually
+            -- INSERT EXERCISE for each group individually
             v_day := v_days(TRUNC(DBMS_RANDOM.value(1, v_days.COUNT+1)));
             v_hour := v_hours(TRUNC(DBMS_RANDOM.value(1, v_hours.COUNT+1)));
             v_lecturerid := TRUNC(DBMS_RANDOM.value(1, 11));
@@ -2771,5 +2869,15 @@ END;
 /
 
 
-
-
+SELECT 
+    p.programid, 
+    p.subjectid, 
+    s.name AS subject_name, 
+    p.lecturerid, 
+    l.firstname || ' ' || l.lastname AS lecturer_name, 
+    p.type AS type_col
+FROM programi p
+JOIN predmeti s ON p.subjectid = s.subjectid
+JOIN lecturers l ON p.lecturerid = l.lecturerid
+WHERE p.groupid = 2563
+ORDER BY p.type, s.name;
