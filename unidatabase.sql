@@ -73,6 +73,9 @@ ALTER TABLE ocenki
 ALTER TABLE ocenki ADD CONSTRAINT ocenki_pk PRIMARY KEY (gradeid)
 USING INDEX TABLESPACE USERS;
 
+ALTER TABLE ocenki RENAME COLUMN "Date" TO grade_date;
+
+
 CREATE TABLE predmeti (
     subjectid   NUMBER NOT NULL,
     name        VARCHAR2(100) NOT NULL,
@@ -135,6 +138,11 @@ CREATE TABLE users (
     
 ) TABLESPACE USERS;
 
+ALTER TABLE users ADD relatedid NUMBER;
+
+ALTER TABLE users ADD CONSTRAINT users_lecturers_fk
+FOREIGN KEY (relatedid)
+REFERENCES lecturers (lecturerid);
 
 
 ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY (userid)
@@ -2881,3 +2889,22 @@ JOIN predmeti s ON p.subjectid = s.subjectid
 JOIN lecturers l ON p.lecturerid = l.lecturerid
 WHERE p.groupid = 2563
 ORDER BY p.type, s.name;
+
+
+ALTER TABLE students
+ADD status VARCHAR2(50) DEFAULT 'Active' NOT NULL
+CHECK (status IN (
+    'Active',
+    'Graduated',
+    'Removed - Tuition Fee',
+    'Removed - Family Issues',
+    'Removed - Voluntary',
+    'Suspended'
+));
+
+
+
+
+
+
+
