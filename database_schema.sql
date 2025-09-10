@@ -9,18 +9,21 @@ CREATE TABLE fakulteti (
     fakultetid   NUMBER NOT NULL,
     fullname     VARCHAR2(100) NOT NULL,
     shortname    VARCHAR2(20)
-);
+) TABLESPACE USERS;
 
-ALTER TABLE fakulteti ADD CONSTRAINT fakulteti_pk PRIMARY KEY ( fakultetid );
+ALTER TABLE fakulteti ADD CONSTRAINT fakulteti_pk PRIMARY KEY (fakultetid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE grupi (
     groupid   NUMBER NOT NULL,
     name      VARCHAR2(10) NOT NULL,
     specid    NUMBER NOT NULL,
-    kurs      NUMBER NOT NULL
-);
+    kurs      NUMBER NOT NULL,
+    education_type_id NUMBER
+) TABLESPACE USERS;
 
-ALTER TABLE grupi ADD CONSTRAINT grupi_pk PRIMARY KEY ( groupid );
+ALTER TABLE grupi ADD CONSTRAINT grupi_pk PRIMARY KEY (groupid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE izpiti (
     izpitid     NUMBER NOT NULL,
@@ -28,17 +31,19 @@ CREATE TABLE izpiti (
     groupid     NUMBER NOT NULL,
     "Date"      DATE NOT NULL,
     type        VARCHAR2(10)
-);
+) TABLESPACE USERS;
 
-ALTER TABLE izpiti ADD CONSTRAINT izpiti_pk PRIMARY KEY ( izpitid );
+ALTER TABLE izpiti ADD CONSTRAINT izpiti_pk PRIMARY KEY (izpitid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE katedri (
     katedraid    NUMBER NOT NULL,
-    name         VARCHAR2(50) NOT NULL,
+    name         VARCHAR2(100) NOT NULL,
     fakultetid   NUMBER NOT NULL
-);
+) TABLESPACE USERS;
 
-ALTER TABLE katedri ADD CONSTRAINT katedri_pk PRIMARY KEY ( katedraid );
+ALTER TABLE katedri ADD CONSTRAINT katedri_pk PRIMARY KEY (katedraid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE lecturers (
     lecturerid    NUMBER NOT NULL,
@@ -47,13 +52,13 @@ CREATE TABLE lecturers (
     lastname      VARCHAR2(30) NOT NULL,
     lecturernom   VARCHAR2(5) NOT NULL,
     katedraid     NUMBER NOT NULL
-);
+) TABLESPACE USERS;
 
 ALTER TABLE lecturers
-    ADD CONSTRAINT chk_lecturernom_format CHECK ( REGEXP_LIKE ( lecturernom,
-                                                                '^10[0-9]{3}$' ) );
+    ADD CONSTRAINT chk_lecturernom_format CHECK (REGEXP_LIKE(lecturernom, '^10[0-9]{3}$'));
 
-ALTER TABLE lecturers ADD CONSTRAINT lecturers_pk PRIMARY KEY ( lecturerid );
+ALTER TABLE lecturers ADD CONSTRAINT lecturers_pk PRIMARY KEY (lecturerid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE ocenki (
     gradeid      NUMBER NOT NULL,
@@ -61,22 +66,26 @@ CREATE TABLE ocenki (
     subjectid    NUMBER NOT NULL,
     lecturerid   NUMBER NOT NULL,
     grade        NUMBER NOT NULL,
-    "Date"       DATE NOT NULL
-);
+    grade_date   DATE NOT NULL
+) TABLESPACE USERS;
 
 ALTER TABLE ocenki
-    ADD CONSTRAINT chk_grade_range CHECK ( grade BETWEEN 1 AND 6 );
+    ADD CONSTRAINT chk_grade_range CHECK (grade BETWEEN 1 AND 6);
 
-ALTER TABLE ocenki ADD CONSTRAINT ocenki_pk PRIMARY KEY ( gradeid );
+ALTER TABLE ocenki ADD CONSTRAINT ocenki_pk PRIMARY KEY (gradeid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE predmeti (
-    subjectid   NUMBER NOT NULL,
-    name        VARCHAR2(100) NOT NULL,
-    semestur    NUMBER NOT NULL,
-    specid      NUMBER NOT NULL
-);
+    subjectid      NUMBER NOT NULL,
+    name           VARCHAR2(100) NOT NULL,
+    semestur       NUMBER NOT NULL,
+    specid         NUMBER NOT NULL,
+    has_lecture    NUMBER(1) DEFAULT 1,
+    has_exercise   NUMBER(1) DEFAULT 1
+) TABLESPACE USERS;
 
-ALTER TABLE predmeti ADD CONSTRAINT predmeti_pk PRIMARY KEY ( subjectid );
+ALTER TABLE predmeti ADD CONSTRAINT predmeti_pk PRIMARY KEY (subjectid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE programi (
     programid    NUMBER NOT NULL,
@@ -84,19 +93,23 @@ CREATE TABLE programi (
     subjectid    NUMBER NOT NULL,
     day          VARCHAR2(10) NOT NULL,
     hour         VARCHAR2(10) NOT NULL,
-    lecturerid   NUMBER NOT NULL
-);
+    lecturerid   NUMBER NOT NULL,
+    type         VARCHAR2(20) NOT NULL
+        CHECK (type IN ('Lecture', 'Exercise'))
+) TABLESPACE USERS;
 
-ALTER TABLE programi ADD CONSTRAINT programi_pk PRIMARY KEY ( programid );
+ALTER TABLE programi ADD CONSTRAINT programi_pk PRIMARY KEY (programid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE specialnosti (
     specid       NUMBER NOT NULL,
     name         VARCHAR2(100) NOT NULL,
     shortname    VARCHAR2(10) NOT NULL,
     fakultetid   NUMBER NOT NULL
-);
+) TABLESPACE USERS;
 
-ALTER TABLE specialnosti ADD CONSTRAINT specialnosti_pk PRIMARY KEY ( specid );
+ALTER TABLE specialnosti ADD CONSTRAINT specialnosti_pk PRIMARY KEY (specid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE students (
     studentid           NUMBER NOT NULL,
@@ -110,91 +123,88 @@ CREATE TABLE students (
     specid              NUMBER NOT NULL,
     groupid             NUMBER NOT NULL,
     semesturcount       NUMBER NOT NULL,
-    kurs                NUMBER NOT NULL
-);
+    kurs                NUMBER NOT NULL,
+    education_type_id   NUMBER,
+    status              VARCHAR2(50) DEFAULT 'Active' NOT NULL
+        CHECK (status IN ('Active', 'Graduated', 'Removed - Tuition Fee', 'Removed - Family Issues', 'Removed - Voluntary', 'Suspended'))
+) TABLESPACE USERS;
 
-ALTER TABLE students ADD CONSTRAINT students_pk PRIMARY KEY ( studentid );
+ALTER TABLE students ADD CONSTRAINT students_pk PRIMARY KEY (studentid)
+USING INDEX TABLESPACE USERS;
 
 CREATE TABLE users (
     userid      INTEGER NOT NULL,
     username    VARCHAR2(50) NOT NULL,
     password    VARCHAR2(100) NOT NULL,
     role        VARCHAR2(20) NOT NULL,
-    relatedid   NUMBER NOT NULL
-);
+    relatedid   NUMBER
+) TABLESPACE USERS;
 
-ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY ( userid );
+ALTER TABLE users ADD CONSTRAINT users_pk PRIMARY KEY (userid)
+USING INDEX TABLESPACE USERS;
 
-ALTER TABLE users ADD CONSTRAINT users__un UNIQUE ( username );
+ALTER TABLE users ADD CONSTRAINT users__un UNIQUE (username)
+USING INDEX TABLESPACE USERS;
 
-ALTER TABLE grupi
-    ADD CONSTRAINT grupi_specialnosti_fk FOREIGN KEY ( specid )
-        REFERENCES specialnosti ( specid );
+CREATE TABLE education_types (
+    education_type_id NUMBER PRIMARY KEY,
+    education_type_name VARCHAR2(50) NOT NULL 
+) TABLESPACE USERS;
 
-ALTER TABLE izpiti
-    ADD CONSTRAINT izpiti_grupi_fk FOREIGN KEY ( groupid )
-        REFERENCES grupi ( groupid );
+-- Foreign keys
+ALTER TABLE grupi ADD CONSTRAINT grupi_specialnosti_fk FOREIGN KEY (specid)
+REFERENCES specialnosti(specid);
 
-ALTER TABLE izpiti
-    ADD CONSTRAINT izpiti_predmeti_fk FOREIGN KEY ( subjectid )
-        REFERENCES predmeti ( subjectid );
+ALTER TABLE grupi ADD CONSTRAINT fk_grupi_education_type FOREIGN KEY (education_type_id)
+REFERENCES education_types(education_type_id);
 
-ALTER TABLE katedri
-    ADD CONSTRAINT katedri_fakulteti_fk FOREIGN KEY ( fakultetid )
-        REFERENCES fakulteti ( fakultetid );
+ALTER TABLE izpiti ADD CONSTRAINT izpiti_grupi_fk FOREIGN KEY (groupid)
+REFERENCES grupi(groupid);
 
-ALTER TABLE lecturers
-    ADD CONSTRAINT lecturers_katedri_fk FOREIGN KEY ( katedraid )
-        REFERENCES katedri ( katedraid );
+ALTER TABLE izpiti ADD CONSTRAINT izpiti_predmeti_fk FOREIGN KEY (subjectid)
+REFERENCES predmeti(subjectid);
 
-ALTER TABLE ocenki
-    ADD CONSTRAINT ocenki_lecturers_fk FOREIGN KEY ( lecturerid )
-        REFERENCES lecturers ( lecturerid );
+ALTER TABLE katedri ADD CONSTRAINT katedri_fakulteti_fk FOREIGN KEY (fakultetid)
+REFERENCES fakulteti(fakultetid);
 
-ALTER TABLE ocenki
-    ADD CONSTRAINT ocenki_predmeti_fk FOREIGN KEY ( subjectid )
-        REFERENCES predmeti ( subjectid );
+ALTER TABLE lecturers ADD CONSTRAINT lecturers_katedri_fk FOREIGN KEY (katedraid)
+REFERENCES katedri(katedraid);
 
-ALTER TABLE ocenki
-    ADD CONSTRAINT ocenki_students_fk FOREIGN KEY ( studentid )
-        REFERENCES students ( studentid );
+ALTER TABLE ocenki ADD CONSTRAINT ocenki_lecturers_fk FOREIGN KEY (lecturerid)
+REFERENCES lecturers(lecturerid);
 
-ALTER TABLE predmeti
-    ADD CONSTRAINT predmeti_specialnosti_fk FOREIGN KEY ( specid )
-        REFERENCES specialnosti ( specid );
+ALTER TABLE ocenki ADD CONSTRAINT ocenki_predmeti_fk FOREIGN KEY (subjectid)
+REFERENCES predmeti(subjectid);
 
-ALTER TABLE programi
-    ADD CONSTRAINT programi_grupi_fk FOREIGN KEY ( groupid )
-        REFERENCES grupi ( groupid );
+ALTER TABLE ocenki ADD CONSTRAINT ocenki_students_fk FOREIGN KEY (studentid)
+REFERENCES students(studentid);
 
-ALTER TABLE programi
-    ADD CONSTRAINT programi_lecturers_fk FOREIGN KEY ( lecturerid )
-        REFERENCES lecturers ( lecturerid );
+ALTER TABLE programi ADD CONSTRAINT programi_grupi_fk FOREIGN KEY (groupid)
+REFERENCES grupi(groupid);
 
-ALTER TABLE programi
-    ADD CONSTRAINT programi_predmeti_fk FOREIGN KEY ( subjectid )
-        REFERENCES predmeti ( subjectid );
+ALTER TABLE programi ADD CONSTRAINT programi_lecturers_fk FOREIGN KEY (lecturerid)
+REFERENCES lecturers(lecturerid);
 
-ALTER TABLE specialnosti
-    ADD CONSTRAINT specialnosti_fakulteti_fk FOREIGN KEY ( fakultetid )
-        REFERENCES fakulteti ( fakultetid );
+ALTER TABLE programi ADD CONSTRAINT programi_predmeti_fk FOREIGN KEY (subjectid)
+REFERENCES predmeti(subjectid);
 
-ALTER TABLE students
-    ADD CONSTRAINT students_fakulteti_fk FOREIGN KEY ( fakultetid )
-        REFERENCES fakulteti ( fakultetid );
+ALTER TABLE specialnosti ADD CONSTRAINT specialnosti_fakulteti_fk FOREIGN KEY (fakultetid)
+REFERENCES fakulteti(fakultetid);
 
-ALTER TABLE students
-    ADD CONSTRAINT students_grupi_fk FOREIGN KEY ( groupid )
-        REFERENCES grupi ( groupid );
+ALTER TABLE students ADD CONSTRAINT students_fakulteti_fk FOREIGN KEY (fakultetid)
+REFERENCES fakulteti(fakultetid);
 
-ALTER TABLE students
-    ADD CONSTRAINT students_specialnosti_fk FOREIGN KEY ( specid )
-        REFERENCES specialnosti ( specid );
+ALTER TABLE students ADD CONSTRAINT students_grupi_fk FOREIGN KEY (groupid)
+REFERENCES grupi(groupid);
 
-ALTER TABLE users
-    ADD CONSTRAINT users_lecturers_fk FOREIGN KEY ( relatedid )
-        REFERENCES lecturers ( lecturerid );
+ALTER TABLE students ADD CONSTRAINT students_specialnosti_fk FOREIGN KEY (specid)
+REFERENCES specialnosti(specid);
 
+ALTER TABLE students ADD CONSTRAINT fk_education_type FOREIGN KEY (education_type_id)
+REFERENCES education_types(education_type_id);
+
+ALTER TABLE users ADD CONSTRAINT users_lecturers_fk FOREIGN KEY (relatedid)
+REFERENCES lecturers(lecturerid);
 
 
 -- Oracle SQL Developer Data Modeler Summary Report: 
@@ -239,3 +249,4 @@ ALTER TABLE users
 -- 
 -- ERRORS                                   0
 -- WARNINGS                                 0
+
